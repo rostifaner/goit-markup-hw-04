@@ -168,7 +168,7 @@ body {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(/images/people-office.jpg);
+    url(/images/people_office.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -323,7 +323,7 @@ body {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.team-card:is(:hover, :focus) .link {
+.team-svg-item .link:is(:hover, :focus) {
   background-color: var(--secondary-state);
 }
 
@@ -359,7 +359,8 @@ body {
   align-items: center;
   justify-content: center;
   color: #8e8f99;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-link .icon {
@@ -417,19 +418,18 @@ body {
   gap: 48px 24px;
 }
 
-.thumb-item .link:hover {
-  box-shadow: 0px 6px 1px 0px rgba(46, 47, 66, 0.08),
-    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
-    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
-}
-
 .thumb-item {
   width: calc((100% - 48px) / 3);
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .thumb-item .link {
   display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.thumb-item .link:hover {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .thumb-text {
@@ -453,7 +453,7 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   background-color: var(--primary-state);
-  color: var(--white);
+  color: var(--cloud);
   position: absolute;
   top: 0;
   left: 0;
@@ -565,6 +565,7 @@ body {
   min-height: 584px;
   border-radius: 4px;
   background: #fcfcfc;
+  transform: translate(-50%, -50%) scale(1);
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
     0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
